@@ -1,5 +1,6 @@
 import requests
 import cv2
+import numpy as np
 
 # To speed up downloading
 cv_session = requests.Session()
