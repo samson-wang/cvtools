@@ -12,7 +12,7 @@ def cv_load_image(in_, type_='path'):
     Return
         image: opencv format np.array. (C x H x W) in BGR np.uint8
     '''
-    if type_ == 'url' or in_.startswith('http:'):
+    if type_ == 'url' or in_.startswith('http'):
         img_nparr = np.fromstring(cv_session.get(in_).content, np.uint8)
         img = cv2.imdecode(img_nparr, cv2.IMREAD_COLOR)
     else:
