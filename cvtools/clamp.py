@@ -21,7 +21,9 @@ def clamp(img, lf=''):
     if len(vertical) == 0:
         return w, 0, img
     vertical_group = filter(lambda x: len(x) > 20, consecutive(vertical))
-    if len(vertical_group) == 1:
+    if len(vertical_group) == 0:
+        return w, 0, img
+    elif len(vertical_group) == 1:
         if vertical_group[0][0] == 0:
             r, l = (w, vertical_group[0][-1])
         elif vertical_group[0][-1] == w-1:
@@ -35,3 +37,10 @@ def clamp(img, lf=''):
         return w, 0, img
 
     return r, l, img[:,l:r,:]
+
+if __name__ == "__main__":
+    import sys
+    from cvtools import cv_load_image
+    img = cv_load_image(sys.argv[1])
+    print clamp(img)
+    

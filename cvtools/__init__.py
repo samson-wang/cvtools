@@ -1,5 +1,5 @@
 name = "cvtools"
-__version__ = '0.1.3'
+from .version import __version__
 from cv_load_image import cv_load_image
 from colors import get_color, COLORS
 from clamp import clamp

@@ -1,4 +1,6 @@
 from setuptools import setup
+execfile('cvtools/version.py')
+print "Version NO:", __version__
 
 with open("README.md", "r") as fh:
     long_description = fh.read()
@@ -6,7 +8,7 @@ with open("README.md", "r") as fh:
 setup(
     name = 'cvtools',
     packages = ['cvtools'], 
-    version = '0.1.3',
+    version = __version__,
     description = 'OpenCV tools for CV applications',
     long_description=long_description,
     long_description_content_type="text/markdown",
