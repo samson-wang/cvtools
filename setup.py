@@ -1,6 +1,8 @@
+from __future__ import print_function
 from setuptools import setup
-execfile('cvtools/version.py')
-print "Version NO:", __version__
+#execfile('cvtools/version.py')
+exec(open('cvtools/version.py').read())
+print("Version NO:", __version__)
 
 with open("README.md", "r") as fh:
     long_description = fh.read()
